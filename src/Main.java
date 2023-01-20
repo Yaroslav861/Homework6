@@ -119,24 +119,24 @@ public class Main {
         while (i < 10) {
             i++;
             System.out.print(i + " ");
+            {
+                System.out.println();
+                for (int w = 10; w >= 1; w--) {
+                    System.out.print(w + " ");
+                }
+                System.out.println();
+            }
         }
-        System.out.println();
-        for (int w = 10; w >= 1; w--) {
-            System.out.print(w + " ");
-        }
-        System.out.println();
     }
 
     private static void task13() {
         System.out.println("Задание 13");
-        int cityY = 12_000_000;
-        int r = 1000;
-        int birthRate = 17;
-        int mortality = 8;
-        int populationGrowth = r + birthRate - mortality;
+        int population = 12_000_000;
+        float birthCount = (float) 17 / 1000;
+        float deathCount = (float) 8 / 1000;
         for (int i = 1; i <= 10; i++) {
-            cityY = cityY + populationGrowth;
-            System.out.println("Год " + i + ", численность населения составляет " + cityY);
+            population = (int) (population + (population * birthCount) - (population * deathCount));
+            System.out.println("Год " + i + ", численность населения составляет " + population);
         }
     }
 
@@ -191,22 +191,10 @@ public class Main {
             i = i + 79;
             if (i % 79 == 0) ;
             System.out.println(i);
-        }
+            }
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
